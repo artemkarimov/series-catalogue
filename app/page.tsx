@@ -1,18 +1,20 @@
-'use client';
+import Link from 'next/link';
 
-import { styled } from 'styled-components';
+import { Route } from '@/common/enums';
+import HomePageWrapper from '@/styles/StyledHomePage';
 
-const Wrapper = styled.div`
-  background-image: linear-gradient(
-    to right bottom,
-    ${({ theme }) => theme.colors.primaryLight},
-    ${({ theme }) => theme.colors.primaryDark}
-  );
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-`;
+const HomePage = () => (
+  <HomePageWrapper>
+    <div className="content-wrapper">
+      <h1 className="heading">
+        <span className="heading-part heading-part--first">Series</span>
+        <span className="heading-part heading-part--second">Catalogue</span>
+      </h1>
+      <Link href={Route.Catalogue}>
+        <button className="cta-button">View the catalogue</button>
+      </Link>
+    </div>
+  </HomePageWrapper>
+);
 
-const Home = () => <Wrapper />;
-
-export default Home;
+export default HomePage;
