@@ -1,3 +1,5 @@
+'use client';
+
 import { usePagination, useSortBy, useTable } from 'react-table';
 import { Pagination, PaginationItem } from '@mui/material';
 
