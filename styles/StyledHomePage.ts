@@ -54,6 +54,7 @@ const HomePageWrapper = styled.div`
     transition: all 0.2s;
     animation: moveInBottom 0.5s ease-out 1s;
     animation-fill-mode: backwards;
+    cursor: pointer;
 
     &:hover {
       box-shadow: 0 1rem 2rem ${({ theme }) => theme.colors.transparentBlack};
