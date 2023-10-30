@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Route } from '@/common/enums';
 
+import { Route } from '@/common/enums';
 import HeaderWrapper from '@/styles/StyledHeader';
 
 const Header = () => (

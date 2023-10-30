@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ApiResponse, ApiResponseData } from '@/common/types';
+import { ApiResponseData } from '@/common/types';
 
 const API_URL = 'https://www.episodate.com/api';
 

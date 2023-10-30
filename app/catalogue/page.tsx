@@ -28,7 +28,7 @@ const CataloguePage = () => {
 
   const handleSearchChange = useCallback((currentSearch: string) => setSearch(currentSearch), []);
 
-  const addSeriesToFavourites = (seriesId: number) => {
+  const addSeriesToFavourites = useCallback((seriesId: number) => {
     const favouriteSeries = localStorage.getItem(STORAGE_KEY);
 
     if (!favouriteSeries) localStorage.setItem(STORAGE_KEY, JSON.stringify([seriesId]));
@@ -37,9 +37,9 @@ const CataloguePage = () => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify([...parsedData, seriesId]));
     }
     setSelectorKey(previousValue => previousValue + 1);
-  };
+  }, []);
 
-  const removeSeriesFromFavourites = (seriesId: number) => {
+  const removeSeriesFromFavourites = useCallback((seriesId: number) => {
     const favouriteSeries = localStorage.getItem(STORAGE_KEY);
 
     if (favouriteSeries) {
@@ -50,17 +50,38 @@ const CataloguePage = () => {
       );
       setSelectorKey(previousValue => previousValue + 1);
     }
-  };
+  }, []);
 
-  const addActions = (data?: Omit<SeriesData, 'action'>[]): SeriesData[] | undefined => {
-    if (!data) return;
+  const addActions = useCallback(
+    (data?: Omit<SeriesData, 'action'>[]): SeriesData[] | undefined => {
+      if (!data) return;
 
-    const favouriteSeries = localStorage.getItem(STORAGE_KEY);
+      const favouriteSeries = localStorage.getItem(STORAGE_KEY);
 
-    if (!favouriteSeries) {
+      if (!favouriteSeries) {
+        return data.map(seriesData => ({
+          ...seriesData,
+          action: (
+            <Icon
+              id={seriesData.id}
+              icon={<StarOutlineIcon />}
+              tooltipMessage="Add series to favourites"
+              onClick={addSeriesToFavourites}
+            />
+          ),
+        }));
+      }
+
       return data.map(seriesData => ({
         ...seriesData,
-        action: (
+        action: JSON.parse(favouriteSeries).includes(seriesData.id) ? (
+          <Icon
+            id={seriesData.id}
+            icon={<StarIcon />}
+            tooltipMessage="Remove series from favourites"
+            onClick={removeSeriesFromFavourites}
+          />
+        ) : (
           <Icon
             id={seriesData.id}
             icon={<StarOutlineIcon />}
@@ -69,30 +90,9 @@ const CataloguePage = () => {
           />
         ),
       }));
-    }
-
-    return data.map(seriesData => ({
-      ...seriesData,
-      action: JSON.parse(favouriteSeries).includes(seriesData.id) ? (
-        <Icon
-          id={seriesData.id}
-          icon={<StarIcon />}
-          tooltipMessage="Remove series from favourites"
-          onClick={removeSeriesFromFavourites}
-        />
-      ) : (
-        <Icon
-          id={seriesData.id}
-          icon={<StarOutlineIcon />}
-          tooltipMessage="Add series to favourites"
-          onClick={addSeriesToFavourites}
-        />
-      ),
-    }));
-  };
-
-  // if (!isError)
-  //   return <h1>Something went wrong. Please, try reloading the page or try getting data later.</h1>;
+    },
+    [addSeriesToFavourites, removeSeriesFromFavourites],
+  );
 
   return (
     <LoadingSpinner open={isLoading}>

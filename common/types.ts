@@ -13,7 +13,6 @@ export type SeriesData = {
 export type TableSchema<T> = {
   Header: string;
   accessor: keyof T;
-  Cell?: any;
 }[];
 
 export type ApiResponseData = {
