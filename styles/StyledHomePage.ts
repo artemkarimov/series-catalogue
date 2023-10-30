@@ -39,6 +39,11 @@ const HomePageWrapper = styled.div`
         animation: moveInRight 1s ease-out;
       }
     }
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
+      font-size: 2.7rem;
+      letter-spacing: 1.2rem;
+    }
   }
 
   .cta-button {
@@ -82,6 +87,12 @@ const HomePageWrapper = styled.div`
       left: 0;
       transition: all 0.4s;
       z-index: -1;
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
+      font-size: 1.3rem;
+      margin-top: 4rem;
+      padding: 1rem 2.5rem;
     }
   }
 

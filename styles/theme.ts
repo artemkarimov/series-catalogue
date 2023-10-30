@@ -10,6 +10,9 @@ const theme = {
     black: '#000000',
     transparentBlack: '#00000033',
   },
+  breakpoints: {
+    small: '600px',
+  },
 };
 
 export default theme;

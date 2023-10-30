@@ -5,11 +5,19 @@ const TableWrapper = styled.header`
 
   .search-input {
     font-size: 1.8rem;
-    width: 20%;
+    width: 25%;
     padding: 1rem;
     margin-bottom: 2rem;
     border: 0.1rem solid ${({ theme }) => theme.colors.lightGray};
     border-radius: 0.5rem;
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
+      width: 100%;
+    }
+  }
+
+  .table-wrapper {
+    overflow-x: scroll;
   }
 
   .table {
@@ -52,6 +60,10 @@ const TableWrapper = styled.header`
 
     .pagination {
       font-size: 1.6rem;
+
+      @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
+        font-size: 1.4rem;
+      }
     }
   }
 `;

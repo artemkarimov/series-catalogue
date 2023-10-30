@@ -36,6 +36,8 @@ const Table = ({
       usePagination,
     );
 
+  const isSmallDevice = window.innerWidth <= 600;
+
   return (
     <TableWrapper>
       <input
@@ -48,9 +50,7 @@ const Table = ({
         }}
         placeholder={PLACEHOLDER_TEXT}
       />
-      <div
-      // style={isMobile ? { overflowX: 'scroll' } : {}}
-      >
+      <div className="table-wrapper">
         <table {...getTableProps()} className="table">
           <thead>
             {headerGroups.map(headerGroup => (
@@ -105,10 +105,8 @@ const Table = ({
 
       <div className="pagination-wrapper">
         <Pagination
-          size="medium"
-          // size={isMobile ? 'small' : 'medium'}
+          size={isSmallDevice ? 'small' : 'medium'}
           siblingCount={1}
-          // siblingCount={isMobile ? 0 : 1}
           count={pageCount}
           page={currentPage}
           color="primary"

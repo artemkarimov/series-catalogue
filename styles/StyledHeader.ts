@@ -11,8 +11,14 @@ const HeaderWrapper = styled.header`
     letter-spacing: 1rem;
     position: absolute;
     top: 50%;
-    left: 15%;
+    left: 50%;
     transform: translate(-50%, -50%);
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
+      font-size: 2rem;
+      letter-spacing: 0.5rem;
+      text-align: center;
+    }
   }
 `;
 

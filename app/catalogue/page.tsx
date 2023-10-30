@@ -30,7 +30,7 @@ const CataloguePage = () => {
 
   const addSeriesToFavourites = (seriesId: number) => {
     const favouriteSeries = localStorage.getItem(STORAGE_KEY);
-    console.log('hereeeeee');
+
     if (!favouriteSeries) localStorage.setItem(STORAGE_KEY, JSON.stringify([seriesId]));
     else {
       const parsedData = JSON.parse(favouriteSeries);
