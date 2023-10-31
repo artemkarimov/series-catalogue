@@ -1,9 +1,7 @@
-'use client';
-
 import { usePagination, useSortBy, useTable } from 'react-table';
 import { Pagination, PaginationItem } from '@mui/material';
 
-import { TableSchema } from '@/common/types';
+import { type TableSchema } from '@/common/types';
 import { getUniqueIdentifier } from '@/common/utils';
 import TableWrapper from '@/styles/StyledTable';
 import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE, PLACEHOLDER_TEXT } from './constants';
@@ -37,8 +35,6 @@ const Table = ({
       useSortBy,
       usePagination,
     );
-
-  const isSmallDevice = window.innerWidth <= 600;
 
   return (
     <TableWrapper>
@@ -107,7 +103,7 @@ const Table = ({
 
       <div className="pagination-wrapper">
         <Pagination
-          size={isSmallDevice ? 'small' : 'medium'}
+          size="small"
           siblingCount={1}
           count={pageCount}
           page={currentPage}
