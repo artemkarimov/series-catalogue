@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import CardWrapper from '@/styles/StyledCard';
+import CardWrapper from './StyledCard';
 
 const Card = ({ children }: { children: ReactNode }) => <CardWrapper>{children}</CardWrapper>;
 

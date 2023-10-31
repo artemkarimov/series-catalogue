@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { Route } from '@/common/enums';
-import HomePageWrapper from '@/styles/StyledHomePage';
+import HomePageWrapper from '@/styles/pages/StyledHomePage';
 
 const HomePage = () => (
   <HomePageWrapper>

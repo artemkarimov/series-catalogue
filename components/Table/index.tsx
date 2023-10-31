@@ -3,7 +3,7 @@ import { Pagination, PaginationItem } from '@mui/material';
 
 import { type TableSchema } from '@/common/types';
 import { getUniqueIdentifier } from '@/common/utils';
-import TableWrapper from '@/styles/StyledTable';
+import TableWrapper from './StyledTable';
 import { DEFAULT_PAGE_INDEX, DEFAULT_PAGE_SIZE, PLACEHOLDER_TEXT } from './constants';
 
 type TableProps<T = Record<string, number | string | JSX.Element>> = {
