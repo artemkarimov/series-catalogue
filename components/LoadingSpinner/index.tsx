@@ -1,7 +1,7 @@
 import { type PropsWithChildren } from 'react';
 import { Backdrop, CircularProgress } from '@mui/material';
 
-import LoadingSpinnerWrapper from '@/styles/StyledLoadingSpinner';
+import LoadingSpinnerWrapper from './StyledLoadingSpinner';
 
 type LoadingSpinnerProps = PropsWithChildren<{ open: boolean }>;
 

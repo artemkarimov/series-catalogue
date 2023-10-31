@@ -1,7 +1,7 @@
 import { type ReactElement } from 'react';
 import { Tooltip } from '@mui/material';
 
-import IconWrapper from '@/styles/StyledIcon';
+import IconWrapper from './StyledIcon';
 
 type IconProps = {
   id: number;

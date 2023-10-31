@@ -5,7 +5,7 @@ const TableWrapper = styled.header`
 
   .search-input {
     font-size: 1.8rem;
-    width: 25%;
+    width: 28rem;
     padding: 1rem;
     margin-bottom: 2rem;
     border: 0.1rem solid ${({ theme }) => theme.colors.lightGray};
@@ -60,9 +60,11 @@ const TableWrapper = styled.header`
 
     .pagination {
       font-size: 1.6rem;
+      padding: 1.6rem 1.2rem;
 
       @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
         font-size: 1.4rem;
+        padding: 0;
       }
     }
   }

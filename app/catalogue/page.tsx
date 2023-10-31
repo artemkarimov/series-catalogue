@@ -5,14 +5,14 @@ import { useQuery } from '@tanstack/react-query';
 import StarIcon from '@mui/icons-material/Star';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 
-import Header from '@/app/components/Header';
-import Card from '@/app/components/Card';
-import Table from '@/app/components/Table';
-import Icon from '@/app/components/Icon';
+import Header from '@/components/Header';
+import Card from '@/components/Card';
+import Table from '@/components/Table';
+import Icon from '@/components/Icon';
+import LoadingSpinner from '@/components/LoadingSpinner';
 import { getSeries } from '@/api/api-helper';
 import { SeriesData } from '@/common/types';
 import { DEFAULT_PAGE, SERIES_CATALOGUE_TABLE_SCHEMA, STORAGE_KEY } from './constants';
-import LoadingSpinner from '../components/LoadingSpinner';
 
 const CataloguePage = () => {
   const [currentPage, setCurrentPage] = useState(DEFAULT_PAGE);

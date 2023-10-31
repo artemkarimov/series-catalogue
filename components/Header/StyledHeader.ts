@@ -9,6 +9,7 @@ const HeaderWrapper = styled.header`
     font-size: 3rem;
     color: ${({ theme }) => theme.colors.white};
     letter-spacing: 1rem;
+    text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,7 +18,6 @@ const HeaderWrapper = styled.header`
     @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 2rem;
       letter-spacing: 0.5rem;
-      text-align: center;
     }
   }
 `;
